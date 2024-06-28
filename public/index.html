@@ -1,0 +1,235 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>PayCliq Notification Board</title>
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <main id="main-container" class="container-fluid">
+      <section class="bg-danger px-1 py-1 m-0">
+        <marquee direction="left" speed="10" class="text-light h4">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo tempore
+          dolore veniam voluptate velit illo a, quisquam quos, placeat totam
+          voluptas!
+        </marquee>
+      </section>
+      <section class="px-2 py-0" id="notification-board">
+        <h1 class="text-center h1">PayCliq Transaction Board</h1>
+        <div class="row" id="card-container">
+          <div class="row gap-2 mt-1">
+            <section
+              class="card bg-light bg-gradient shadow-sm overflow-auto p-2 col"
+              id="p-stats"
+            >
+              <h1 class="text-center mx-1 my-1">Processing</h1>
+              <table class="table general-stats">
+                <thead>
+                  <tr>
+                    <th scope="col" class="text-center">App.</th>
+                    <th scope="col" class="text-center">Dec.</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="approved-rate text-center">75%</td>
+                    <td class="declined-rate text-center">25%</td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="canvas-container">
+                <canvas id="myChart"></canvas>
+              </div>
+            </section>
+            <section
+              class="card bg-light bg-gradient shadow-sm overflow-auto p-2 col"
+              id="c-table"
+            >
+              <h1 class="text-center mx-1 my-1">Channels</h1>
+              <table class="table">
+                <thead>
+                  <tr class="timeline">
+                    <td></td>
+                    <td colspan="2" class="text-center border border-dark">Today</td>
+                    <td colspan="2" class="text-center border border-dark">10 mins ago</td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Channels</th>
+                    <th scope="col" class="text-center">App.</th>
+                    <th scope="col" class="text-center">Dec.</th>
+                    <th scope="col" class="text-center">App.</th>
+                    <th scope="col" class="text-center">Dec.</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="limmiter">Channel 1</td>
+                    <td class="text-center">0%</td>
+                    <td class="text-center">100%</td>
+                    <td class="text-center">5%</td>
+                    <td class="text-center">95%</td>
+                  </tr>
+                  <tr>
+                    <td class="limmiter">Channel 2</td>
+                    <td class="text-center">5%</td>
+                    <td class="text-center">95%</td>
+                    <td class="text-center">10%</td>
+                    <td class="text-center">90%</td>
+                  </tr>
+                  <tr>
+                    <td class="limmiter">Channel 3</td>
+                    <td class="text-center">10%</td>
+                    <td class="text-center">90%</td>
+                    <td class="text-center">0%</td>
+                    <td class="text-center">100%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section
+              class="card bg-light bg-gradient shadow-sm overflow-auto p-2 col"
+              id="s-table"
+            >
+              <h1 class="text-center mx-1 my-1">Scheme</h1>
+              <table class="table">
+                <thead>
+                  <tr class="timeline">
+                    <td></td>
+                    <td colspan="2" class="text-center border border-dark">Today</td>
+                    <td colspan="2" class="text-center border border-dark">10 mins ago</td>
+                  </tr>
+                  <tr>
+                    <th scope="col">Schemes</th>
+                    <th scope="col" class="text-center">App.</th>
+                    <th scope="col" class="text-center">Dec.</th>
+                    <th scope="col" class="text-center">App.</th>
+                    <th scope="col" class="text-center">Dec.</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="limmiter">Scheme 1</td>
+                    <td class="text-center">0%</td>
+                    <td class="text-center">100%</td>
+                    <td class="text-center">5%</td>
+                    <td class="text-center">95%</td>
+                  </tr>
+                  <tr>
+                    <td class="limmiter">Scheme 2</td>
+                    <td class="text-center">5%</td>
+                    <td class="text-center">95%</td>
+                    <td class="text-center">10%</td>
+                    <td class="text-center">90%</td>
+                  </tr>
+                  <tr>
+                    <td class="limmiter">Scheme 3</td>
+                    <td class="text-center">10%</td>
+                    <td class="text-center">90%</td>
+                    <td class="text-center">0%</td>
+                    <td class="text-center">100%</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
+          <div class="row gap-2 mt-2">
+            <section
+              class="card bg-light bg-gradient shadow-sm overflow-auto p-2 col"
+              id="p-table"
+            >
+              <h1 class="text-center mx-1 my-1">Processing</h1>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Channel</th>
+                    <th scope="col">Scheme</th>
+                    <th scope="col">Bank</th>
+                    <th scope="col" class="text-center">Status</th>
+                    <th scope="col" class="text-center">Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="limmiter">Channel 1</td>
+                    <td class="limmiter">Scheme 1</td>
+                    <td>Wema Bank</td>
+                    <td class="status"><p class="pending">Pending</p></td>
+                    <td class="date">1s ago</td>
+                  </tr>
+                  <tr>
+                    <td class="limmiter">Channel 1</td>
+                    <td class="limmiter">Scheme 1</td>
+                    <td>Wema Bank</td>
+                    <td class="status"><p class="success">Success</p></td>
+                    <td class="date">1s ago</td>
+                  </tr>
+                  <tr>
+                    <td class="limmiter">Channel 1</td>
+                    <td class="limmiter">Scheme 1</td>
+                    <td>Wema Bank</td>
+                    <td class="status"><p class="failure">Failed</p></td>
+                    <td class="date">1s ago</td>
+                  </tr>
+                  <tr>
+                    <td class="limmiter">Channel 1</td>
+                    <td class="limmiter">Scheme 1</td>
+                    <td>Wema Bank</td>
+                    <td class="status"><p class="success">Success</p></td>
+                    <td class="date">1s ago</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+            <section
+              class="card bg-light bg-gradient shadow-sm overflow-auto p-2 col"
+              id="d-table"
+            >
+              <h1 class="text-center mx-1 my-1">Decline Stats</h1>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th scope="col">Channel</th>
+                    <th scope="col">Scheme</th>
+                    <th scope="col">Bank</th>
+                    <th scope="col" class="text-center">Status</th>
+                    <th scope="col" class="text-center">Time</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="limmiter">Channel 1</td>
+                    <td class="limmiter">Scheme 1</td>
+                    <td>Wema Bank</td>
+                    <td class="status"><p class="failure">Failed</p></td>
+                    <td class="date">1s ago</td>
+                  </tr>
+                  <tr>
+                    <td class="limmiter">Channel 1</td>
+                    <td class="limmiter">Scheme 2</td>
+                    <td>Opay</td>
+                    <td class="status"><p class="failure">Failed</p></td>
+                    <td class="date">10s ago</td>
+                  </tr>
+                  <tr>
+                    <td class="limmiter">Channel 3</td>
+                    <td class="limmiter">Scheme 2</td>
+                    <td>Kredi Bank</td>
+                    <td class="status"><p class="failure">Failed</p></td>
+                    <td class="date">5mins ago</td>
+                  </tr>
+                </tbody>
+              </table>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
